@@ -17,7 +17,10 @@ const Temperature = () => {
 
     <Button title="Convertir" onPress={() => setFahrenheit((1.8 * centigrade) + 32)} />
     {
-      fahrenheit != 0 ? isNaN(centigrade) == false ? <Text>{centigrade} grados centigrados, son {fahrenheit} grados Fahrenheit</Text> : <Text>No has ingresado un número válido</Text> : false
+      fahrenheit != 0 ? isNaN(centigrade) == false ?
+        <Text>{centigrade} grados centigrados, son {fahrenheit} grados Fahrenheit</Text>
+        : <Text>No has ingresado un número válido</Text>
+        : false
     }
   </View>;
 }
