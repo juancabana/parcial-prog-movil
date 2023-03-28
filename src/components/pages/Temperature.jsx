@@ -8,16 +8,16 @@ const Temperature = () => {
   return <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
     <Text>Ingresa la temperatura en grados centigrados</Text>
     <TextInput
+      keyboardType='numeric'
       placeholder='Grados centigrados'
       style={styles.input}
-      onChangeText={(text) => {setCentigrade(text); setFahrenheit(0)}}
-      keyboardType='numeric'
+      onChangeText={(text) => { setCentigrade(text); setFahrenheit(0) }}
     // value={centigrade}
     />
 
-    <Button title="Convertir" onPress={() => setFahrenheit((1.8*centigrade)+32)} />
+    <Button title="Convertir" onPress={() => setFahrenheit((1.8 * centigrade) + 32)} />
     {
-      fahrenheit != 0 ? <Text>{centigrade} grados centigrados, son {fahrenheit} grados Fahrenheit</Text> : false
+      fahrenheit != 0 ? isNaN(centigrade) == false ? <Text>{centigrade} grados centigrados, son {fahrenheit} grados Fahrenheit</Text> : <Text>No has ingresado un número válido</Text> : false
     }
   </View>;
 }
