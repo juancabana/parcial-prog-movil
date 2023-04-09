@@ -6,6 +6,8 @@ const Temperature = () => {
   const [centigrade, setCentigrade] = useState(0);
   const [fahrenheit, setFahrenheit] = useState(0)
   return <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+
+    <Text style={{ fontWeight: 'bold', fontSize: 20, textAlign: 'center' }}>Convertir grados centigrados a grados farenheith {"\n"}{"\n"}</Text>
     <Text>Ingresa la temperatura en grados centigrados</Text>
     <TextInput
       keyboardType='numeric'
@@ -14,8 +16,9 @@ const Temperature = () => {
       onChangeText={(text) => { setCentigrade(text); setFahrenheit(0) }}
     // value={centigrade}
     />
+    <Text>{"\n"}</Text>
 
-    <Button title="Convertir" onPress={() => setFahrenheit((1.8 * centigrade) + 32)} />
+    <Button title="Convertir" onPress={() => { centigrade != 0 ? setFahrenheit((1.8 * centigrade) + 32) : false }} />
     {
       fahrenheit != 0 ? isNaN(centigrade) == false ?
         <Text>{centigrade} grados centigrados, son {fahrenheit} grados Fahrenheit</Text>

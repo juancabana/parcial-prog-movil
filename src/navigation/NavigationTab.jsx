@@ -18,7 +18,8 @@ export default function NavigationTab() {
                 elevation: 0,
                 borderRadius: 15,
                 height: 90,
-                ...styles.shadow
+                ...styles.shadow,
+                textAlign: 'center'
             }
         }} >
             <Tab.Screen name='Temperature' component={Temperature} />
